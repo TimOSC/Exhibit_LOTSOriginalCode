@@ -13,7 +13,7 @@
 #include "WaveHC.h" //#include "wave.h"
 #include "WaveUtil.h" //#include "util.h"
 
-#define FOG_TIMER_SECS        120
+#define FOG_TIMER_SECS        60
 
 #define NO_HITS_TIMEOUT_SECS  90 
 #define PR_DELTA_THRESHOLD    30
@@ -285,7 +285,7 @@ void loop()
     {
         delay(50);
         digitalWrite(FOG_PWR, HIGH);
-        delay(100);
+        delay(2000);
         digitalWrite(FOG_PWR, LOW);
         delay(50);
 	lastFogTime = millis(); //[cjb]
