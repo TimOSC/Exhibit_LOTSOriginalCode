@@ -290,9 +290,14 @@ void loop()
         delay(50);
 	lastFogTime = millis(); //[cjb]
     }                                // JTC 1/12/13
+<<<<<<< HEAD:LOTS_Original_Code/LOTS_Original_Code.ino
                                      // TLB 7/13/14 Changed fog time to every
                                     //  7 mins and fog trigger to one second.
   
+=======
+  			             // TLB 7/13/14 Changed fog timer to every 7 minutes
+  			             // and pushed fog for 1 second
+>>>>>>> origin/master:LOTS_Original_Code.ino
   switch (GameState)
   {
     case GAME_INIT:
@@ -365,7 +370,12 @@ void loop()
 //        digitalWrite(FOG_PWR, HIGH);
 //        delay(100);
 //        digitalWrite(FOG_PWR, LOW);    JTC 1/12/13
+<<<<<<< HEAD:LOTS_Original_Code/LOTS_Original_Code.ino
 //        This was a previous fog option but was removed for a timed fog
+=======
+//					This is the code for pushing the fog effect with every
+//					button push. We now use a timer system TLB 7/13/14
+>>>>>>> origin/master:LOTS_Original_Code.ino
         delay(50);
         ledshowSTART();
         delay(50);
