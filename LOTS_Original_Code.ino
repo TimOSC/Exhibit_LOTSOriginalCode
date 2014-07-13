@@ -279,18 +279,19 @@ void loop()
 {   
   digitalWrite(FOG_PWR, LOW); //redundant but keep 
   
-  timeSinceLastFog = (int)( (float)(millis() - lastFogTime) / 1000.0 );
+  timeSinceLastFog = (int)( (float)(millis() - lastFogTime) / 7000.0 );
    
   if ( timeSinceLastFog > FOG_TIMER_SECS )
     {
         delay(50);
         digitalWrite(FOG_PWR, HIGH);
-        delay(2000);
+        delay(1000);
         digitalWrite(FOG_PWR, LOW);
         delay(50);
 	lastFogTime = millis(); //[cjb]
     }                                // JTC 1/12/13
-  
+  			             // TLB 7/13/14 Changed fog timer to every 7 minutes
+  			             // and pushed fog for 1 second
   switch (GameState)
   {
     case GAME_INIT:
@@ -363,6 +364,8 @@ void loop()
 //        digitalWrite(FOG_PWR, HIGH);
 //        delay(100);
 //        digitalWrite(FOG_PWR, LOW);    JTC 1/12/13
+//					This is the code for pushing the fog effect with every
+//					button push. We now use a timer system TLB 7/13/14
         delay(50);
         ledshowSTART();
         delay(50);
